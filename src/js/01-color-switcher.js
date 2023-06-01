@@ -1,7 +1,3 @@
-function getRandomHexColor() {
-    return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0)}`;
-};
-
 const refs = {
     btnStartEl: document.querySelector("button[data-start]"),
     btnStopEl: document.querySelector("button[data-stop]"),
@@ -17,7 +13,7 @@ refs.btnStopEl.addEventListener('click', stopColorSwitcher);
 function startColorSwitcher(){
     if(intervalId){
         return;  
-      }
+    }
     intervalId = setInterval(() => {
         applyToBackgroundColor()
     }, INTERVAL_DELAY);
@@ -36,4 +32,8 @@ function stopColorSwitcher(){
 
 function applyToBackgroundColor(){
     document.body.style.backgroundColor = getRandomHexColor();
+};
+
+function getRandomHexColor() {
+    return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0)}`;
 };
