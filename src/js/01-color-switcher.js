@@ -19,7 +19,7 @@ function startColorSwitcher(){
         return;  
       }
     intervalId = setInterval(() => {
-        document.body.style.backgroundColor = getRandomHexColor();
+        applyToBackgroundColor()
     }, INTERVAL_DELAY);
     refs.btnStartEl.disabled = true;
     refs.btnStopEl.disabled = false;
@@ -32,4 +32,8 @@ function stopColorSwitcher(){
         refs.btnStopEl.disabled = true;
         intervalId = null;
     }
+};
+
+function applyToBackgroundColor(){
+    document.body.style.backgroundColor = getRandomHexColor();
 };
