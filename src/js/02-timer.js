@@ -24,6 +24,7 @@ applyNewStylesForDivTimer();
 refs.btnStartEl.disabled = true;
 refs.btnStartEl.addEventListener('click', () => {
     timer.start();
+refs.btnStartEl.disabled = true;
 });
 
 
