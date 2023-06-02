@@ -37,7 +37,7 @@ const options = {
         const currentDate = new Date();
         const chosenDate = selectedDates[0];
         if (chosenDate <= currentDate) {
-            Notiflix.Notify.failure('Please choose a date in the future');
+            Notiflix.Notify.warning('Please choose a date in the future');
             refs.btnStartEl.disabled = true;
         } else {
             refs.btnStartEl.disabled = false;
@@ -62,7 +62,7 @@ const timer = {
             const time = convertMs(deltaTime);
             spanUpdateAccodringToCklock(time);
             if (deltaTime <= 0) {
-                clearInterval(intervalId);
+                clearInterval(this.intervalId);
                 spanUpdateAccodringToCklock(convertMs(0));
               }        
         },1000);
